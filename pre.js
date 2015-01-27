@@ -27,3 +27,6 @@ Module.preRun.push(function() {
 });
 
 Module.logReadFiles = true;
+
+// Need to enable 'pipe' (-p) mode for ngspice to accept our input from stdin
+Module.arguments = ['-p'];
