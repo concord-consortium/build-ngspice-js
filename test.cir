@@ -1,0 +1,6 @@
+test
+v1 1 0 1
+r1 1 0 2k
+.options filetype=ascii
+.dc v1 1 1 1
+.end

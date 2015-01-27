@@ -1,0 +1,9 @@
+src/
+tests/
+man/
+*.log
+Makefile
+config.status
+libtool
+ngspice.js
+ngspice.html
