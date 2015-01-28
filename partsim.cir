@@ -1,0 +1,19 @@
+UnNamed Project Simulation
+V1 Net1000 0 15V
+ R2 Net1002 Net1000 3.3K
+ R1 0 Net1000 2.2K
+ R3 0 Net1002 150
+.options rshunt = 1.0e12 KEEPOPINFO
+.control
+OP
+* OP Let expressions, if any:
+
+write <rawfile> Net1000 Net1002  I(V1)
+set appendwrite true
+dc V1 0 1 1
+*Let expressions, if any:
+
+write <rawfile> v(Net1000) v(Net1002)
+rusage everything
+.endc
+.end

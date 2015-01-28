@@ -1,0 +1,25 @@
+test
+v1 1 0 1
+r1 1 0 2k
+.options filetype=ascii
+.dc v1 1 1 1
+.end
+
+
+UnNamed Project Simulation
+V1 Net1000 0 15V
+ R2 Net1002 Net1000 3.3K
+ R1 0 Net1000 2.2K
+ R3 0 Net1002 150
+
+
+* ----
+
+destroy
+devhelp
+listing
+remcirc
+reset
+save -- remember this is for saving on memory; must occur before run 
+
+error handling is inconsistent, so `set strict_errorhandling`

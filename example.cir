@@ -1,0 +1,6 @@
+Example netlist
+v1 1 0 dc 15
+r1 1 0 2.2k
+r2 1 2 3.3k     
+r3 2 0 150
+.end
