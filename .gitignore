@@ -7,3 +7,4 @@ config.status
 libtool
 ngspice.js
 ngspice.html
+ngspice.html.mem
