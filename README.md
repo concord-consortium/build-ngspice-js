@@ -19,7 +19,8 @@ The build runs on my computer (running OS X 10.9.5); that is all I can promise.
 
 4. `cd release` and run `./build.sh`:
 
-        cd release  # this has to be run from the `<ngspice repo>/release`
+        cd release  
+        # this must be run from the `<ngspice repo>/release`:
         ./build.sh
 
 This should build `ngspice.html`, `ngspice.js`, and `ngspice.html.mem`. You can open `ngspice.html`. The page will appear to be blank, but you can open it in your browser's developer console to see the output from SPICE.
