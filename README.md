@@ -26,9 +26,9 @@ This should build `ngspice.html`, `ngspice.js`, and `ngspice.html.mem`. You can 
 
 ## Rebuilding:
 
-* Initially, and after making structural changes to the C source code that require makefile/autoconf changes: `./build.sh` (will rebuild the entire project)
-* After modifying C source: `./make.sh` (reruns Make, runs linker & generates JS, recompiling only changed sources)
-* After modifying the Javascript sources in this repository: `./gen.sh` (skips the Make step)
+* Initially, and after making structural changes to the C source code that require makefile/autoconf changes: `./build.sh` (always rebuilds the entire project)
+* After modifying C source: `./make.sh` (reruns Make, recompiling only changed sources, then runs linker & JS generation)
+* After modifying Javascript sources: `./gen.sh` (skips the C compilation, and just runs the linker and JS generation)
 
 ## Key learnings:
 
