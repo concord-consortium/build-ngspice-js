@@ -11,10 +11,13 @@ The build runs on my computer (running OS X 10.9.5); that is all I can promise.
 ## Setup
 
 1. Install [Emscripten](http://emscripten.org/) -- either the official Emscripten SDK, or from Homebrew
-2. Clone ngspice from the Concord Consortium version on Github: https://github.com/concord-consortium/ngspice
+2. Clone *the `emscripten` branch* of ngspice from the Concord Consortium version on Github: https://github.com/concord-consortium/ngspice:
+
+        git clone --branch emscripten https://github.com/concord-consortium/ngspice.git
+        
 3. Clone *this* repository into `<ngspice repo>/release`:
 
-        # in the root of the ngspice repository:
+        cd ngspice
         git clone https://github.com/concord-consortium/build-ngspice-js.git release
 
 4. `cd release` and run `./build.sh`:
@@ -46,4 +49,5 @@ This should build `ngspice.html`, `ngspice.js`, and `ngspice.html.mem`. You can 
 * Instead of using `emscripten_set_main_loop` in `main.c`, modify `main.c` so that it publishes an endpoint callable from Javascript. (See http://kripken.github.io/emscripten-site/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#interacting-with-code)  That way ngspice can be quiescent until we have input for it, at which point we populate the `stdin` buffer, add or modify netlists and other files in the virtual `MEMFS` filesystem seen by ngspice, and call `app_rl_readlines` from Javascript.
 * Make a simple demo page that (asynchronously) accepts user input to spice
 * Maintain the build product at a canonical UREL: the current HTML/JS build products are available at https://github.com/concord-consortium/build-ngspice-js/tree/gh-pages
+* Setup a Travis build
  
