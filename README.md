@@ -43,7 +43,7 @@ This should build `ngspice.html`, `ngspice.js`, and `ngspice.html.mem`. You can 
 
 ## TODO:
 
-* Instead of using `emscripten_set_main_loop` in `main.c`, modify `main.c` so that it publishes an endpoint callable from Javascript. That way ngspice can be quiescent until we have input for it, at which point we populate the `stdin` buffer, add or modify netlists and other files in the virtual `MEMFS` filesystem seen by ngspice, and call `app_rl_readlines` from Javascript.
+* Instead of using `emscripten_set_main_loop` in `main.c`, modify `main.c` so that it publishes an endpoint callable from Javascript. (See http://kripken.github.io/emscripten-site/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#interacting-with-code)  That way ngspice can be quiescent until we have input for it, at which point we populate the `stdin` buffer, add or modify netlists and other files in the virtual `MEMFS` filesystem seen by ngspice, and call `app_rl_readlines` from Javascript.
 * Make a simple demo page that (asynchronously) accepts user input to spice
 * Maintain the build product at a canonical UREL: the current HTML/JS build products are available at https://github.com/concord-consortium/build-ngspice-js/tree/gh-pages
  
